@@ -38,6 +38,7 @@ const App = () => {
         setImages((prevImages) => [...prevImages, ...response.data.results]);
       }
     } catch (error) {
+      console.error("API Error:", error.response?.data || error.message);
       setError("Не вдалося завантажити зображення. Спробуйте ще раз.");
       toast.error("Помилка при завантаженні зображень.");
     } finally {
